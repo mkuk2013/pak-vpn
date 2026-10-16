@@ -17,7 +17,7 @@ a{color:var(--green-dark)}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-4px}
 
 /* ---------- buttons & chips ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:13px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.btn{font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:13px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
 .btn .ic{width:19px;height:19px}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(0,166,81,.35)}
