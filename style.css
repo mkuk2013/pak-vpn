@@ -273,3 +273,6 @@ a{color:var(--green-dark)}
 .loc-tag.pro{background:#fdf0cd;color:#9a6b00}
 @media (max-width:860px){.loc-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:420px){.loc-grid{grid-template-columns:1fr 1fr}.loc-name{font-size:12.3px}}
+
+.loc-flag img{width:27px;height:auto;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.25);display:block}
+.free-flag img{width:44px;height:auto;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,.22)}
