@@ -67,3 +67,33 @@
       a.remove();
     });
   });
+
+// ---------- website order form (payment confirmation) ----------
+var orderForm = document.getElementById("orderForm");
+if (orderForm) {
+  orderForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var plan = document.getElementById("ordPlan").value;
+    var phone = document.getElementById("ordPhone").value.trim();
+    var tid = document.getElementById("ordTid").value.trim();
+    var ok = document.getElementById("orderOk");
+    var err = document.getElementById("orderErr");
+    ok.classList.add("hidden"); err.classList.add("hidden");
+    if (!/^03\d{9}$/.test(phone)) {
+      err.textContent = "Please enter a valid 11-digit mobile number starting with 03.";
+      err.classList.remove("hidden"); return;
+    }
+    if (tid.length < 6) {
+      err.textContent = "Please enter the Transaction ID (TID) from your EasyPaisa receipt.";
+      err.classList.remove("hidden"); return;
+    }
+    var id = "ORD-" + Date.now().toString(36).toUpperCase();
+    var orders = [];
+    try { orders = JSON.parse(localStorage.getItem("pakvpn_web_orders") || "[]"); } catch (x) { orders = []; }
+    orders.push({ id: id, plan: plan, phone: phone, tid: tid, ts: Date.now(), status: "Pending Verification" });
+    try { localStorage.setItem("pakvpn_web_orders", JSON.stringify(orders)); } catch (x) {}
+    ok.innerHTML = "<b>Order submitted!</b> Your Order ID is <b>" + id + "</b>. Once your payment is verified, you will receive a redeem code — enter it in the Pak VPN app (Redeem Pro code) and Pro activates instantly.<br>For faster activation, also send your TID on WhatsApp to <b>0336 3268833</b>.";
+    ok.classList.remove("hidden");
+    orderForm.querySelector(".order-submit").disabled = true;
+  });
+}
