@@ -54,3 +54,16 @@
     });
   });
 })();
+
+  // Download buttons: no href (so the browser shows no link preview on hover);
+  // the click builds the download link on the fly instead.
+  document.querySelectorAll("[data-dl]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = document.createElement("a");
+      a.href = btn.getAttribute("data-dl");
+      a.rel = "noopener";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  });
