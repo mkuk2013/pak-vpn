@@ -180,3 +180,11 @@ a { color: var(--green-dark); }
   .section { padding: 44px 0; }
   .hero-downloads .btn { width: 100%; }
 }
+
+/* payment method logos */
+.pay-methods{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pm-chip{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid #19c37d;border-radius:20px;padding:4px 12px 4px 5px;font-size:12.5px;font-weight:700;color:#0b3d22}
+.pm-chip img{height:22px;width:auto;border-radius:6px}
+.pm-chip b{font-size:10px;color:#00a651;text-transform:uppercase;letter-spacing:.4px}
+.pm-chip.dim{border-color:#d7e8dc;color:#5c7a67}
+.pm-chip.dim b{color:#9db4a6}
