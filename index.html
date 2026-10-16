@@ -274,7 +274,7 @@
       </div>
     </div>
 
-    <div class="pay-box">
+    <div class="pay-box" id="pay">
       <div class="pay-methods">
         <span class="pm-chip"><img src="payments/easypaisa.png" alt="EasyPaisa">EasyPaisa<b>Active</b></span>
         <span class="pm-chip dim"><img src="payments/jazzcash.png" alt="JazzCash">JazzCash<b>Soon</b></span>
@@ -288,9 +288,33 @@
       </div>
       <ol class="pay-steps">
         <li>Send the exact amount for your plan to the EasyPaisa number above.</li>
-        <li>In the app, open the Pro page and submit your phone number + Transaction ID (TID) from your receipt.</li>
+        <li>Submit your phone number + Transaction ID (TID) in the order form below.</li>
         <li>Once verified, you receive a redeem code — enter it in the app and Pro activates instantly.</li>
       </ol>
+      <form class="order-form" id="orderForm">
+        <h4><img class="ic-img" src="assets/icons/check.png" alt=""> Confirm your payment</h4>
+        <label>Choose your plan
+          <select id="ordPlan" required>
+            <option value="VPN Pro — 1 month, 7 devices — Rs 499">VPN Pro · 1 month · 7 devices — Rs 499</option>
+            <option value="VPN Pro — 2 months, 7 devices — Rs 899">VPN Pro · 2 months · 7 devices — Rs 899</option>
+            <option value="VPN Pro — 3 months, 7 devices — Rs 1,299">VPN Pro · 3 months · 7 devices — Rs 1,299</option>
+            <option value="VPN Pro — 4 months, 7 devices — Rs 1,699">VPN Pro · 4 months · 7 devices — Rs 1,699</option>
+            <option value="VPN Pro — 5 months, 7 devices — Rs 1,999">VPN Pro · 5 months · 7 devices — Rs 1,999</option>
+            <option value="VPN Pro — 6 months, 17 devices — Rs 2,299">VPN Pro · 6 months · 17 devices — Rs 2,299</option>
+            <option value="Bulk Device extensions — Rs 80 per slot">Bulk Device extensions — Rs 80 per slot</option>
+            <option value="Dedicated IP — from Rs 1,950/month">Dedicated IP — from Rs 1,950/month</option>
+          </select>
+        </label>
+        <label>Phone number you paid from
+          <input id="ordPhone" type="tel" inputmode="numeric" placeholder="03xxxxxxxxx" maxlength="11" required>
+        </label>
+        <label>Transaction ID (TID)
+          <input id="ordTid" type="text" placeholder="From your EasyPaisa receipt" required>
+        </label>
+        <button class="btn btn-primary order-submit" type="submit">Submit payment confirmation</button>
+        <div class="order-ok hidden" id="orderOk"></div>
+        <p class="order-err hidden" id="orderErr"></p>
+      </form>
       <p class="pay-note">JazzCash, USDT and UPI payments are <b>coming soon</b> — for now, EasyPaisa is the active payment method. You can also send to this number from any bank app via Raast.</p>
     </div>
   </div>
