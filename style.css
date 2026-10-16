@@ -287,3 +287,13 @@ a{color:var(--green-dark)}
 
 .loc-flag img{width:27px;height:auto;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.25);display:block}
 .free-flag img{width:44px;height:auto;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,.22)}
+
+/* order form (payment page) */
+.order-form{margin-top:20px;border-top:1px dashed var(--line);padding-top:18px;display:grid;gap:12px}
+.order-form h4{margin-bottom:2px}
+.order-form label{display:grid;gap:6px;font-size:13.5px;font-weight:700;color:var(--ink)}
+.order-form input,.order-form select{font:inherit;font-weight:500;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fbfffc;color:var(--ink);outline:none}
+.order-form input:focus,.order-form select:focus{border-color:var(--green)}
+.order-submit{justify-content:center;border:0;cursor:pointer;font:inherit}
+.order-ok{background:#e7f8ec;border:1px solid #9fdcba;color:#045c2c;border-radius:10px;padding:12px 14px;font-size:13.8px;line-height:1.55}
+.order-err{color:#b3261e;font-size:13.3px;font-weight:600}
