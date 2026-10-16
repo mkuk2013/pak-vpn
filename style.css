@@ -15,6 +15,28 @@ a{color:var(--green-dark)}
 .text-center{text-align:center}
 .w-full{width:100%}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-4px}
+.ic-img{object-fit:contain;flex:none}
+.btn .ic-img{width:20px;height:20px}
+.hero-badge .ic-img{width:16px;height:16px}
+.feature-icon .ic-img{width:29px;height:29px}
+.step-icon .ic-img{width:29px;height:29px}
+.mini-icon .ic-img{width:24px;height:24px}
+.tick-list .ic-img{width:18px;height:18px;margin-top:1px}
+.promo-banner .ic-img{width:23px;height:23px}
+.pro-ribbon .ic-img{width:15px;height:15px}
+.pay-box h4 .ic-img{width:22px;height:22px}
+.free-flag .ic-img{width:34px;height:34px}
+.faq-arrow .ic-img{width:17px;height:17px;display:block}
+.dl-icon .ic-img{width:31px;height:31px}
+.mock-crown .ic-img{width:19px;height:19px}
+.mock-tile .ic-img{width:16px;height:16px}
+.mock-chev .ic-img{width:12px;height:12px}
+.mock-timer .ic-img{width:13px;height:13px}
+.ic-power{width:36px;height:36px}
+.nav-toggle .bar{display:block;width:19px;height:2.2px;background:#234534;border-radius:2px}
+.nav-toggle{gap:4.5px;flex-direction:column}
+.mock-menu{flex-direction:column;gap:3.5px}
+.mock-menu .mbar{display:block;width:15px;height:2px;background:#234534;border-radius:2px}
 
 /* ---------- buttons & chips ---------- */
 .btn{font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:13px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
@@ -65,7 +87,7 @@ a{color:var(--green-dark)}
 .mock-brand img{width:26px;height:26px;border-radius:7px}
 .mock-brand b{color:var(--green)}
 .mock-selector{display:flex;align-items:center;gap:9px;background:#fff;border-radius:13px;padding:8px 10px;box-shadow:0 4px 12px rgba(0,90,45,.12)}
-.mock-tile{width:28px;height:28px;border-radius:8px;background:var(--ink);color:#35e08a;display:flex;align-items:center;justify-content:center}
+.mock-tile{width:28px;height:28px;border-radius:8px;background:#e7f8ec;border:1px solid var(--line);color:#35e08a;display:flex;align-items:center;justify-content:center}
 .mock-tile .ic{width:15px;height:15px}
 .mock-sel-name{font-weight:700;color:#12291c;font-size:14.5px;flex:1}
 .mock-chev{width:24px;height:24px;border-radius:7px;background:#e8f5ec;color:#51755f;display:flex;align-items:center;justify-content:center}
@@ -105,7 +127,7 @@ a{color:var(--green-dark)}
 /* steps */
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
 .step-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow)}
-.step-icon{width:48px;height:48px;border-radius:13px;background:var(--ink);color:#35e08a;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step-icon{width:48px;height:48px;border-radius:13px;background:#e7f8ec;border:1px solid var(--line);color:#35e08a;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .step-icon .ic{width:24px;height:24px}
 .step-num{position:absolute;top:18px;right:20px;font-size:30px;font-weight:800;color:#e2f2e7}
 .step-card h3{font-size:16.5px;color:var(--ink);margin-bottom:7px}
@@ -175,7 +197,7 @@ a{color:var(--green-dark)}
 .download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .download-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
 .download-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.dl-icon{width:54px;height:54px;border-radius:15px;background:var(--ink);color:#35e08a;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.dl-icon{width:54px;height:54px;border-radius:15px;background:#e7f8ec;border:1px solid var(--line);color:#35e08a;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
 .dl-icon .ic{width:27px;height:27px}
 .download-card h3{font-size:18px;color:var(--ink)}
 .dl-meta{display:flex;gap:7px;margin:9px 0 11px}
@@ -240,3 +262,14 @@ a{color:var(--green-dark)}
   .features-grid{grid-template-columns:1fr}
   .hero-downloads .btn{width:100%}
 }
+
+/* locations grid — flag + full name for every location */
+.loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:1020px;margin:6px auto 20px}
+.loc-chip{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 11px;box-shadow:0 2px 6px rgba(0,90,45,.05)}
+.loc-flag{font-size:21px;line-height:1}
+.loc-name{font-size:13.3px;font-weight:600;color:var(--ink-2);flex:1;line-height:1.25}
+.loc-tag{font-size:9.5px;font-weight:800;letter-spacing:.6px;padding:2.5px 7px;border-radius:11px}
+.loc-tag.free{background:#e7f8ec;color:var(--green-dark)}
+.loc-tag.pro{background:#fdf0cd;color:#9a6b00}
+@media (max-width:860px){.loc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.loc-grid{grid-template-columns:1fr 1fr}.loc-name{font-size:12.3px}}
