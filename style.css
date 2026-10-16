@@ -217,17 +217,28 @@ a{color:var(--green-dark)}
 .faq-a p{padding:0 19px 17px;font-size:14.3px}
 
 /* footer */
-.site-footer{background:var(--ink);color:#cfe9da;margin-top:0;padding:44px 0 34px}
-.footer-brand{display:flex;align-items:center;gap:13px}
-.footer-logo{width:44px;height:44px;border-radius:11px}
-.footer-brand b{font-size:19px;color:#fff}
-.footer-brand p{font-size:13px;color:#9fd4b4}
-.footer-nav{display:flex;flex-wrap:wrap;gap:20px;margin:22px 0}
-.footer-nav a{color:#cfe9da;text-decoration:none;font-size:14px;font-weight:600}
-.footer-nav a:hover{color:#fff}
-.footer-credit{font-size:14px;color:#eafff2}
+.site-footer{background:linear-gradient(180deg,#0c4526,var(--ink));color:#cfe9da;padding:52px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.7fr .8fr 1fr 1.3fr;gap:34px}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-logo{width:42px;height:42px;border-radius:11px}
+.footer-brand b{font-size:20px;color:#fff}
+.f-desc{font-size:13.8px;color:#a9d3ba;margin:14px 0 16px;line-height:1.6;max-width:340px}
+.f-pay{display:flex;flex-wrap:wrap;gap:7px}
+.f-pay .pm-chip{background:#fff}
+.f-col h5{color:#fff;font-size:12.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:15px}
+.f-col a{display:block;color:#cfe9da;text-decoration:none;font-size:14.3px;font-weight:600;padding:4.5px 0}
+.f-col a:hover{color:#fff}
+.f-link{display:block;background:none;border:0;font-family:inherit;color:#cfe9da;font-size:14.3px;font-weight:600;padding:4.5px 0;cursor:pointer;text-align:left}
+.f-link:hover{color:#fff}
+.f-link span{color:#7fb894;font-size:12.5px;font-weight:700}
+.f-text{font-size:13.8px;color:#a9d3ba;line-height:1.6;margin-bottom:13px}
+.f-text b{color:#eafff2}
+.f-col .promo-code{margin-top:5px}
+.footer-bar{border-top:1px solid rgba(255,255,255,.14);margin-top:36px;padding-top:19px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;font-size:13.3px;color:#9fd4b4}
+.footer-credit{color:#eafff2}
 .footer-credit a{color:#35e08a;font-weight:700}
-.footer-small{font-size:12.5px;color:#7fb894;margin-top:6px}
+@media (max-width:960px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.footer-grid{grid-template-columns:1fr}.footer-bar{justify-content:flex-start}}
 
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
