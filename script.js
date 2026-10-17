@@ -97,3 +97,35 @@ if (orderForm) {
     orderForm.querySelector(".order-submit").disabled = true;
   });
 }
+// Always-latest download links: even if the browser shows a cached copy of
+// this page, the download buttons are pointed at the newest GitHub release
+// as soon as the page opens — old links can never send anyone to a 404.
+(function () {
+  try {
+    fetch("https://api.github.com/repos/mkuk2013/pak-vpn/releases/latest", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rel) {
+        if (!rel || !rel.assets) return;
+        var byKind = {};
+        rel.assets.forEach(function (a) {
+          var n = (a.name || "").toLowerCase();
+          var kind = null;
+          if (n.indexOf("arm32") !== -1) kind = "arm32";
+          else if (n.indexOf("extension") !== -1) kind = "extension";
+          else if (n.indexOf("android") !== -1 && n.slice(-4) === ".apk") kind = "android";
+          else if (n.indexOf("windows") !== -1) kind = "windows";
+          if (kind) byKind[kind] = a.browser_download_url;
+        });
+        document.querySelectorAll("[data-dl]").forEach(function (btn) {
+          var cur = (btn.getAttribute("data-dl") || "").toLowerCase();
+          var kind = null;
+          if (cur.indexOf("arm32") !== -1) kind = "arm32";
+          else if (cur.indexOf("extension") !== -1) kind = "extension";
+          else if (cur.indexOf("android") !== -1 && cur.indexOf(".apk") !== -1) kind = "android";
+          else if (cur.indexOf("windows") !== -1) kind = "windows";
+          if (kind && byKind[kind]) btn.setAttribute("data-dl", byKind[kind]);
+        });
+      })
+      .catch(function () { /* keep the links baked into the page */ });
+  } catch (e) { /* older browser — baked-in links still work */ }
+})();
